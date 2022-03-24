@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Mulish:wght@200&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inconsolata&family=Mulish:wght@200&family=Roboto:wght@100;300;400;500;700&display=swap');
+:root{
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: .1rem solid rgba(255, 255, 255,.3);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden; /*không hiện thanh cuộn trục x*/
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+html::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 5rem;
+}
+body{
+    background-color: var(--bg); /*cho body nền đen*/
+}
+/* -------------CSS header-------------- */
+.header{ 
+    background: var(--bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 7%; /*padding thẻ header top-bottom: 1.5rem ~~ left-right:7%  */
+    border-bottom: var(--border); /*tạo gạch dưới trên class header*/
+    position: fixed;/* fixed class header */
+    top: 0;
+    left: 0; 
+    right: 0;
+    z-index: 1000; 
+}
+                            /*css logo*/
+.header .logo img{
+    height: 6rem; /*img heigt 6rem*/
+}
+                           /*css navbar*/
+.header .navbar a{
+    margin: 0 2rem; /*các thẻ a cách nhau */
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+} 
+.header .navbar a:hover{ /*khi hover các thẻ a hiện thanh gạch dưới bottom*/
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .1rem;
+}
+                          /*css icons*/
+.header .icons div{
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+.header .icons div:hover{ /**khi hover vào*/
+    color: var(--main-color);
+}
+#menu-btn{
+    display: none;  /*ẩn - bật trên tablet and mobile */
+}
+                  /* CSS seacrh-form */
+.header .search-form{
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background-color: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+.header .search-form.active{ /*từ js*/
+    transform: scaleY(1);
+}
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding: 1rem;
+    text-transform: none;
+    font-style: italic;
+    
+}
+.header .search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color: var(--black);
+}
+           /* css cart-items-container */
+        .header .cart-items-container{
+            position: absolute;
+            top: 100%; /*top: 100%-right: 0%%*/
+            right: -100%; /*ẩn the cart sang trái -100%*/
+            height: calc(100vh - 9.5rem);
+            width: 35rem;
+            background-color: #fff;
+            padding: 0 1.5rem;
+            /* transform: scaleY(0);
+            transform-origin: right;  */
+        }
+        .header .cart-items-container.active{ /*từ js*/
+            /* transform: scaleY(1);  */
+            right: 0;  
+        }
+        .header .cart-items-container .cart-item{
+            position: relative;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .header  .cart-items-container .cart-item .fa-times{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--black);
+        }
+        .header  .cart-items-container .cart-item .fa-times:hover{
+            color: var(--main-color);
+        }
+        .header  .cart-items-container .cart-item img{
+            height: 7rem;
+        }
+        .header .cart-items-container .cart-item .content h3{
+            font-size: 2rem;
+            color: var(--black);
+            padding-bottom: .5rem;
+        }
+        .header  .cart-items-container .cart-item .content .price{
+            font-family: 1rem;
+            color: var(--black);
+            padding-bottom: .5rem;
+        }
+
+            /* css btn-checkout */
+            .btn{
+                margin-top: 1rem;
+                display: inline-block;
+                padding: .7rem 3rem;
+                font-size: 1.7rem;
+                color: #fff;
+                background-color: var(--main-color);
+                cursor: pointer;
+            }
+            .btn:hover{
+                letter-spacing: .1rem;
+            }
+            .header .cart-items-container .btn{
+                width: 100%;
+                text-align: center;
+            }
+
+/* media queries */
+    /*responsive tablet*/
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 1.5rem 2rem;
+    }
+}
+    /*responesive mobile*/
+@media (max-width: 768px){
+    #menu-btn{
+        display: inline-block;  /*bật trên mobile */
+    }
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%; /*ẩn thẻ sang phai -100%*/
+        background-color: #fff;
+        width: 100%; /*width cho thẻ khi responsive */
+        height: calc(100vh - 9.5rem);
+        text-align: center;
+        transition: all 0.2s linear;
+        text-transform: capitalize;
+    }
+    .header .navbar a{
+        display: block; /*cho thẻ nằm đứng khi đã position: absolute*/
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+        color: var(--black);
+    }
+    .header .navbar a:hover{
+        border: none;
+    }
+    .header .logo img{
+        height: 4rem;
+        margin-left: 2rem; /*img heigt 6rem*/
+    }
+     /* active từ js */
+    .header .navbar.active{ /*từ js*/
+        right: 0;
+    }
+    .header .cart-items-container.active{ /*từ js*/
+        right: 0;
+    }
+    .header .search-form.active{ /*từ js*/
+        transform: scaleY(1);
+    }
+    .header .search-form{
+        width: 90%;
+        right: 2rem;
+    }
+    
+     /*responsive HOME*/
+     .home{
+        background-position: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .home .content h3{
+        background-position: left;
+        font-size: 4.5rem;
+        /* margin-top: -25rem; */
+    }
+    .home .content p{
+        background-position: left;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    .header{
+        padding: 1.5rem 2rem;
+    }
+}
+/* -------------CSS section HOME-------------- */
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../image/coffee-home-hd.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home .content{
+    max-width: 90rem;
+    padding: 3rem 12%;
+}
+.home .content h3{
+    font-size: 6rem;
+    color: #fff;
+    font-family: 'Hurricane', cursive;
+   
+}
+.home .content p{
+    font-size: 2rem;
+    font-weight: lighter;
+    color: #fff;
+    line-height: 1.8;
+    font-family: 'Hurricane', cursive;
+    padding: 1rem 0;
+    color: rgba(238, 238, 238, 0.809);
+}
+    
+/* -------------CSS section ABOUT-------------- */
+.heading{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 3.5rem 0;
+    font-size: 4rem;
+}
+.heading span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+.about .row{
+    display: flex;
+   align-items: center;
+    flex-wrap: wrap;
+    background: var(--black);
+}
+.about .row .image{
+    flex: 1 1 45rem;
+   
+}
+.about .row .image img{
+    width: 100%;
+} 
+.about .row .content{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+.about .row .content h3{
+    font-size: 3rem;
+    color: #fff;
+}
+.about .row .content p{
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #ccc;
+    padding: 1rem 0;
+}
+
+
+/* -------------CSS section MENU-------------- */
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+   
+}
+.menu .box-container .box{
+    padding: 5rem;
+    text-align: center;
+    border: var(--border);
+}
+.menu .box-container .box img{
+    height: 10rem;
+}
+.menu .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.menu .box-container .box .price{
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.menu .box-container .box .price span{
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: line-through; /*gạch ngang số*/
+}
+.menu .box-container .box:hover{
+    background-color:bisque;
+  
+}
+
+.menu .box-container .box:hover > *{
+    color: var(--black);
+}
+
+
+/* -------------CSS section PRODUCTS-------------- */
+
+.products .box-container{   
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+.products .box-container .box{
+    padding: 5rem;
+    text-align: center;
+    border: var(--border);
+}
+.products .box-container .box .icons a{
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    border: var(--border);
+    color: #fff;
+    margin: .3rem;
+}
+.products .box-container .box .icons a:hover{
+    background: var(--main-color);
+}
+.products .box-container .box .image{
+    padding: 2.5rem 0;
+}
+.products .box-container .box .image img{
+    height: 25rem;
+}
+.products .box-container .box .content h3{
+    color: #fff;
+    font-size: 2.5rem;
+}
+.products .box-container .box .content .stars{
+    padding: 1.5rem;
+}
+.products .box-container .box .content .stars i{
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+.products .box-container .box .content .price{
+    color: #fff;
+    font-size: 1.5rem;
+}
+.products .box-container .box .content .price span{
+    text-decoration: line-through;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+.products .box-container .box:hover{
+    background-color:rgba(100, 148, 237, 0.768);
+  
+}
+
+.products .box-container .box:hover > *{
+    color: var(--black);
+}
+
+/* -------------CSS section REVIEW-------------- */
+.review .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+.review .box-container .box{
+    text-align: center;
+    padding: 3rem 2rem;
+    border:var(--border);
+}
+.review .box-container .box p{
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #ccc;
+    padding: 2rem 0;
+}
+.review .box-container .box .user{
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.review .box-container .box h3{
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: #fff;
+}
+.review .box-container .box .stars i{ 
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+/* -------------CSS section CONTACT-------------- */
+
+.contact .row{
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.contact .row .map{
+    flex:1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+    height: 40rem;
+    padding: 2rem;
+}
+.contact .row form{
+    flex:1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.contact .row form h3{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #fff;
+}
+ 
+.contact .row form .inputBox{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--bg);
+    border: var(--border);
+}
+
+.contact .row form .inputBox span{
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+
+.contact .row form .inputBox input{
+    background-color: transparent;
+    color: #fff;
+    height: 3rem;
+    font-size: 1.5rem;
+    padding: 2rem;
+    font-style: italic;
+}  
