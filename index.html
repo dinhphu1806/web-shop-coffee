@@ -12,6 +12,11 @@
     <script
         src="https://code.jquery.com/jquery-3.6.0.js">
     </script>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      />
 </head>
 <body>
     <!-- header section starts -->
@@ -21,7 +26,7 @@
         </a>
 
         <nav class="navbar">
-            <a href="#home">home</a>
+            <a class="under" href="#home">home</a>
             <a href="#about">about</a>
             <a href="#menu">menu</a>
             <a href="#products">products</a>
@@ -96,6 +101,69 @@
     </section>
     <!--home section ends-->
 
+    <!--slick-slider section starts-->
+    <section class="slick-slider" id="slick-slider">
+        <h1 class="heading">Flavored Coffee</h1>       
+        
+        <div class="image-box">
+                <!--image-item-1-->
+            <div class="image-item">
+                <div class="image">
+                    <img src="https://media.istockphoto.com/photos/cup-of-espresso-with-coffee-beans-picture-id1177900338?b=1&k=20&m=1177900338&s=170667a&w=0&h=F8zfPlOjKVU8GXg32SQIWAE0ozBd_1PcsXw2slkCQT8=" alt="">
+                </div>
+            </div>
+            <!--image-item-2-->
+            <div class="image-item">
+                <div class="image">
+                    <img src="https://media.istockphoto.com/photos/refreshing-hot-cup-of-coffee-at-a-cafe-picture-id1358132613?b=1&k=20&m=1358132613&s=170667a&w=0&h=4lxHOZRkfubPw4Y4MKHrk-v7R2ZUrK4KBVtvdJrPtU4=" alt="">
+                </div>
+            </div>
+            <!--image-item-3-->
+            <div class="image-item">
+                <div class="image">
+                    <img src="https://media.istockphoto.com/photos/hands-holding-coffee-while-working-on-laptop-picture-id1334318367?b=1&k=20&m=1334318367&s=170667a&w=0&h=PwXZjchJWX0cQOt4GzcUrAJHhjQelDYHHjDPG8LYgsk=" alt="">
+                </div>
+            </div>
+            <!--image-item-4-->
+            <div class="image-item">
+                <div class="image">
+                    <img src="https://media.istockphoto.com/photos/latte-coffee-or-cappuccino-coffee-picture-id1338148383?b=1&k=20&m=1338148383&s=170667a&w=0&h=SfA2UpzXqMYBtU5kD2P6siBDi3U69PpFLYo9G5RD3mU=" alt="">
+                </div>
+            </div>  
+            <!--image-item-5-->
+            <div class="image-item">
+                <div class="image">
+                    <img src="https://media.istockphoto.com/photos/glass-of-freshly-prepared-dalgona-coffee-picture-id1324007958?b=1&k=20&m=1324007958&s=170667a&w=0&h=V0vLFotZyqo8QuPeFTISdsF00Jt4D_ds1ROp7cNzv-c=" alt="">
+                </div>
+            </div> 
+            <!--image-item-6-->
+            <div class="image-item">
+                <div class="image">
+                    <img src="https://media.istockphoto.com/photos/asian-woman-using-smartphone-photography-coffee-latte-and-dessert-on-picture-id1341772669?b=1&k=20&m=1341772669&s=170667a&w=0&h=5kYPUqTAlWyEFhbBKB_01c-4wztLQDweYNLcHkmJ6aU=" alt="">
+                </div>
+            </div>
+            <!--image-item-7-->
+            <div class="image-item">
+                <div class="image">
+                    <img src="https://media.istockphoto.com/photos/asian-barista-serving-a-cup-of-coffee-to-young-customer-small-owner-picture-id1215358846?b=1&k=20&m=1215358846&s=170667a&w=0&h=bfP9vxCKuRjgngbadj8xmHuI8KHGUB-ReG8eorzdYsw=" alt="">
+                </div>
+            </div>
+            <!--image-item-8-->
+            <div class="image-item">
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29mZmVlfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                </div>
+            </div>
+            <!--image-item-9-->
+            <div class="image-item">
+                <div class="image">
+                    <img src="https://media.istockphoto.com/photos/cup-glass-of-coffee-with-smoke-and-coffee-beans-on-old-wooden-picture-id1303583671?b=1&k=20&m=1303583671&s=170667a&w=0&h=Nq5aWss-PVbEm5jDIa0nTf35qsxQH8znqtX9MAU5__A=" alt="">
+                </div>
+            </div>
+       
+        </div>     
+    </section>
+    <!-- slick-slider section ends-->
     <!--about section start-->
     <section class="about" id="about">
         <h1 class="heading">
@@ -188,7 +256,7 @@
       <!--menu section ends-->
 
       <!--products section starts-->
-      <section class="products" id="product">
+      <section class="products" id="products">
         <h1 class="heading"> our <span>product</span></h1>
         <div class="box-container">
             <!--product 1-->
@@ -356,8 +424,9 @@
         </section>
       <!--contact section ends-->
       
+    
       <!--blogs section starts-->
-        <section class="blogs" id="blogs">
+        <!-- <section class="blogs" id="blogs">
             <h1 class="heading">our <span>blogs</span></h1>
 
             <div class="box-container">
@@ -372,9 +441,20 @@
                 </div>
 
             </div>
-        </section>
+        </section> -->
       <!--blos section ends-->
     <!-- custom js file link -->
     <script src="./js/app.js"></script>
+
+    <!-- source js -->
+    <!-- thêm nguồn icon ionicon link: https://ionic.io/ionicons/usage-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <!--link: http://kenwheeler.github.io/slick/ -> mục getting start: When complete, your HTML should look something like:-->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+    <script src="./js/slick-slider.js"></script>
 </body>
 </html>
