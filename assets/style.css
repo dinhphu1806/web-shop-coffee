@@ -49,7 +49,10 @@ body{
     left: 0; 
     right: 0;
     z-index: 1000; 
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+  
 }
+
                             /*css logo*/
 .header .logo img{
     height: 6rem; /*img heigt 6rem*/
