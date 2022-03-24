@@ -199,9 +199,10 @@ body{
         position: absolute;
         top: 100%;
         right: -100%; /*ẩn thẻ sang phai -100%*/
-        background-color: #fff;
-        width: 100%; /*width cho thẻ khi responsive */
-        height: calc(100vh - 9.5rem);
+        background-color:#13131ab8;
+        width: 50%; /*width cho thẻ khi responsive */
+        /* height: calc(100vh - 9.5rem); */
+        height: 100vh;
         text-align: center;
         transition: all 0.2s linear;
         text-transform: capitalize;
@@ -211,7 +212,9 @@ body{
         margin: 1.5rem;
         padding: .5rem;
         font-size: 2rem;
-        color: var(--black);
+        color: rgb(238, 231, 231);
+        /* color: var(--black); */
+        text-transform:capitalize;
     }
     .header .navbar a:hover{
         border: none;
