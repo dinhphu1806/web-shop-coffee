@@ -265,6 +265,9 @@ body{
         background-position: left;
         font-size: 1.5rem;
     }
+    .message{
+        display: none;
+    }
 }
 
 @media (max-width: 450px){
@@ -273,6 +276,9 @@ body{
     }
     .header{
         padding: 1.5rem 2rem;
+    }
+    .message{
+        display: none;
     }
 }
 /* -------------CSS section HOME-------------- */
@@ -686,4 +692,51 @@ body{
 /* .slick-dots .slick-active button{
     background-color: #2cccff;
 } */
+
+.message{
+    position: relative;
+}
+.message-box{
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    width: 4rem;
+    height: 10rem;
+    /* background-color:aquamarine; */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+   
+}
+.btn-home{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 2.5rem;
+    height: 4rem;
+    background-color:#d3ad7f;
+    color: #fff;
+}
+.message-box .btn-home:hover{
+    opacity: .7;
+}
+.btn-message{
+    font-size: 4rem;
+    width: 5rem;
+    height: 5rem;
+    background-color:burlywood;
+    opacity: 1;
+    text-align: center;   
+    border-radius: 50%;
+    color: #fff;
+}
+.message-box .btn-message:hover{
+    background-color: #ccc;
+    color: #fff;
+    opacity: .8;
+    font-weight: bold;
+}
+
+
+
 
