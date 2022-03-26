@@ -596,22 +596,23 @@ body{
     align-items: center;
 }
 
-.image img{
+.image-box .image-item .image img{
     width: 100%;
-    height: 100%; 
-    border-radius: 10px;
+    height: 100%;
+    object-fit: cover; 
 }
-.image-item .image{
+.slick-slider .image-box .image-item .image{
     overflow: hidden;
+    width: 100%;
+    height: 30rem;
 }
-.image-item .image img:hover{
+.slick-slider .image-box .image-item:hover .image img{
     transform: scale(1.2);
-    transition: all 0.2s linear;
 }
 .image-box{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    grid-gap: 10px; 
+    gap: 3rem; 
     align-items: center;
     justify-content: center;
     position: relative;
@@ -723,41 +724,87 @@ body{
     bottom: 3%;
     width: 4rem;
     height: 10rem;
-    /* background-color:aquamarine; */
     display: flex;
     flex-direction: column;
     position: fixed;
-   
-}
-.btn-home{
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    width: 2.5rem;
-    height: 4rem;
-    background-color:#d3ad7f;
-    color: #fff;
-}
-.message-box .btn-home:hover{
-    opacity: .7;
+    z-index: 1000;
+    
 }
 .btn-message{
     font-size: 4rem;
     width: 5rem;
     height: 5rem;
-    background-color:burlywood;
+    background-color:rgb(222, 184, 135);
     opacity: 1;
     text-align: center;   
     border-radius: 50%;
     color: #fff;
 }
 .message-box .btn-message:hover{
-    background-color: #ccc;
+    background-color: #010103;
     color: #fff;
     opacity: .8;
     font-weight: bold;
+    transform: scale(1.2);
+    transform-origin: right;
+}
+.back-to-home{
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+    position: fixed;
+    z-index: 1000;
+}
+.btn-home{
+    width: 3rem;
+    font-size: 4rem;
+    color: rgb(61, 53, 53);
+    z-index: 1000;
+}
+.back-to-home .btn-home:hover{
+    color: #ccc;
 }
 
+/* -------------CSS section BLOGS-------------- */
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 0 2rem;  
+    text-align: center;
+    padding: 0 2rem;
+   
+
+}
+.blogs .box{
+    border: 1px solid #ccc;
+}
+.box-container .box .content{
+    display: flex;
+    flex-direction: column;
+}
+.box-container .content .title{
+    font-size: 2rem;
+    color: #fff;
+}
+.box-container .content span{
+    font-size: 1rem;
+    color: var(--main-color);
+    margin-top: 2rem;
+}
+.blogs .box-container .box .image{
+    overflow: hidden;
+    height: 25rem;
+    width: 100%;
+}
+.blogs .box-container .box .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.blogs .box-container .box:hover .image img{
+    transform: scale(1.2);
+
+}
 
 
 
