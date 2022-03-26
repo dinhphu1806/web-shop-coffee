@@ -194,6 +194,27 @@ body{
     .header{
         padding: 1.5rem 2rem;
     }
+    .home{
+        overflow: hidden;
+    }
+    .slick-slider{
+        overflow: hidden;
+    }
+    .about{
+        overflow: hidden;
+    }
+    .menu{
+        overflow: hidden;
+    }
+    .products{
+        overflow: hidden;
+    }
+    .review{
+        overflow: hidden;
+    }
+    .contact{
+        overflow: hidden;
+    }
 }
     /*responesive mobile*/
 @media (max-width: 768px){
