@@ -45,11 +45,11 @@ body{
     align-items: center;
     padding: 1.5rem 7%; /*padding thẻ header top-bottom: 1.5rem ~~ left-right:7%  */
     border-bottom: var(--border); /*tạo gạch dưới trên class header*/
-    /* position: fixed;fixed class header
+    position: fixed;fixed class header
     top: 0;
     left: 0; 
     right: 0;
-    z-index: 1000;  */
+    z-index: 1000; 
     box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
   
 }
@@ -289,6 +289,15 @@ body{
     .message{
         display: none;
     }
+    .footer-list{
+        display: flex;
+        flex-direction: column; 
+        color: #fff;
+        padding: 0;
+        width: 100%;
+        background-color: rgba(67, 64, 64, 0.33);
+    }
+
 }
 
 @media (max-width: 450px){
@@ -767,12 +776,12 @@ body{
 }
 
 
-.back-to-home{
+#back-to-home{
     position: absolute;
     right: 0;
     bottom: 30%;
     position: fixed;
-    z-index: 1000;
+    
 }
 
 .btn-home{
@@ -781,7 +790,7 @@ body{
     color: rgb(61, 53, 53);
     z-index: 1000;
 }
-.back-to-home .btn-home:hover{
+#back-to-home .btn-home:hover{
     color: #ccc;
 }
 
@@ -863,7 +872,8 @@ body{
     padding: 5rem 8rem;
     width: 80%;
     margin: 0 auto;
-    background-color: rgba(67, 64, 64, 0.33);}
+    background-color: rgba(67, 64, 64, 0.33);
+}
 .footer-left{
     width: 40rem;
    
@@ -1094,11 +1104,11 @@ body{
     text-align: center;
 }
 
-#preloader{
+/* #preloader{
     background: #000 url(../image/loading3.gif) no-repeat center center;
     background-size: 25%;
     position: fixed;
     width: 100%;
     height: 100vh;
     z-index: 1000;
-} 
+}  */
