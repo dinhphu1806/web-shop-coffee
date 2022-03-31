@@ -18,6 +18,7 @@
     text-transform: capitalize;
     transition: all 0.2s linear;
 }
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;/* không hiện thanh cuộn trục x
@@ -946,6 +947,13 @@ body{
     text-align: center;
     line-height: 5rem;
     font-size: 1.3rem;
+    text-transform:initial;
+}
+.design-author a{
+    color: #ccc;
+}
+.design-author a:hover{
+    text-decoration: underline;
 }
 
 /*..............CSS MODAL MESSAGE-HELP-----------------*/
