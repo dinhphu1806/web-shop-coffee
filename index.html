@@ -21,6 +21,12 @@
       />
 </head>
 <body>
+    <!--preloader section starts-->
+    <section id="preloader">
+        
+    </section>
+    <!--preloader section ends-->
+
     <!-- header section starts -->
     <header class="header">
         <a class="logo" href="#">
@@ -478,20 +484,18 @@
       <!--fixed message starts-->
       <section class="message">
         <div class="message-box">
-            <a class="btn-message"href="https://www.messenger.com/login/"><i class="far fa-comment-dots"></i></a>
+            <a class="btn-message" id="js-btn"><i class="fab fa-facebook-messenger"></i></a>
         </div>
         <div class="back-to-home">
             <a class="btn-home" href="#home"><i class="fas fa-caret-square-up"></i></a>
         </div>
-       
       </section>
 
       <!--fixed message ends-->
-
+   
       <!--blogs section starts-->
          <section class="blogs" id="blogs">
             <h1 class="heading">our <span>blogs</span></h1>
-
             <div class="box-container">
                  <!-- box-1 -->
                 <div class="box">     
@@ -503,7 +507,7 @@
                         <a class="title" href="#">Tasty And Refreshing Coffe</a>
                         <span href="#">By Admin/ 1st May, 2022</span>
                         <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Nisi, Culpa </p>
-                        <a href="#"class="btn">Read More</a>
+                        <a href="#"class="btn-blogs">Read More</a>
                     </div>
                 </div>
 
@@ -516,7 +520,7 @@
                         <a class="title" href="#">Tasty And Refreshing Coffe</a>
                         <span href="#">By Admin/ 1st May, 2022</span>
                         <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Nisi, Culpa </p>
-                        <a href="#"class="btn">Read More</a>
+                        <a href="#"class="btn-blogs">Read More</a>
                     </div>
                 </div>
 
@@ -529,14 +533,74 @@
                         <a class="title" href="#">Tasty And Refreshing Coffe</a>
                         <span href="#">By Admin/ 1st May, 2022</span>
                         <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Nisi, Culpa </p>
-                        <a href="#"class="btn">Read More</a>
+                        <a href="#" class="btn-blogs" >Read More </a>
                     </div>
                 </div>
 
-
             </div>
         </section>
-      <!--blos section ends-->
+      <!--blogs section ends-->
+     
+      <!--footer section starts-->
+       <footer class="footer-column">
+           <div class="footer-list">
+                <div class="footer-left">
+                    <h1 class="footer-heading">About Us</h1>
+                    <span><hr></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do elusmod tempor incididunt ut labore et dolore
+                        magna aliqua, Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.</p>
+                    <ul class="footer-links-left">
+                     
+                        <a href="#!" style="color: #436b9f;"  class="footer-link-left"><i class="fab fa-facebook-square"></i></a>
+                  
+                        <a href="#!" style="color: #1DA1F2;" class="footer-link-left"><i class="fab fa-twitter-square"></i></a>
+                                 
+                        <a href="#!" style="color: #d1407a;" class="footer-link-left"><i class="fab fa-instagram-square"></i></a>
+                                      
+                        <a href="#!" style="color: red;" class="footer-link-left"><i class="fab fa-youtube"></i></a>
+                     
+                        <a href="#!" style="color: #0077B5;" class="footer-link-left"><i class="fab fa-linkedin"></i></a>
+                    </ul>
+                </div>
+                <div class="footer-middle">
+                    <h1 class="footer-heading">Quick Links</h1>
+                    <span><hr></span>
+                    <ul class="footer-links-middle">
+                            <a href="#" class="footer-link-middle">About</a>                       
+                            <a href="#" class="footer-link-middle">FAQ</a>                  
+                            <a href="#" class="footer-link-middle">Privacy Policy</a>                   
+                            <a href="#" class="footer-link-middle">Help</a>         
+                            <a href="#" class="footer-link-middle">Term & Conditions</a>               
+                            <a href="#" class="footer-link-middle">Contact</a>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <h1 class="footer-heading">Contact Us</h1>
+                    <span><hr></span>
+                    <div class="footer-location flex">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>521 lane, Co Nhue Street <br>North District of Tu Liem, Hanoi </p>
+                    </div>
+                    <div class="footer-phone flex">
+                        <i class="fas fa-phone"></i>
+                        <p>(+84) 356.897.495</p>
+                    </div>
+                    <div class="footer-mail flex">
+                        <i class="fas fa-envelope"></i>
+                        <p>dinhphu.le1806it@gmail.com</p>
+                    </div>
+                </div>
+           </div>
+       </footer>
+
+       <footer class="design-author">
+        Copyright © 2022 by dinhphu1806 . All Rights Reserved.
+       </footer>
+        <!--footer section ends-->
+
     <!-- custom js file link -->
     <script src="./js/app.js"></script>
 
@@ -550,8 +614,81 @@
     <script type="text/javascript" src="slick/slick.min.js"></script>
 
     <script src="./js/slick-slider.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/loader.js"></script>
     <script>
         AOS.init();
       </script>
+
+
+      <!--modal message-help-->
+      <div class="modal" id="js-modal">
+        <div class="modal-container" id="js-modal-container">
+          <div class="modal-close js-modal-close">X</div>
+          <div class="modal-content">
+              <div class="heading-modal">
+                <h2>Tư vấn CaFe</h2>
+              </div>
+              <div class="header-modal">
+                 
+                  <div class="assistant">
+                    <a href="http://message.com"><img style="width: 4rem; border-radius: 50%;" src="./image/logo-coffee1.jpg" alt=""></a>
+                    <div class="assistant-content">
+                        <h2>Lê Phú</h2>
+                        <span>Chuyên viên tư vấn</span> 
+                    </div>
+                  </div>
+                  <div class="feel">
+                    <i class="far fa-thumbs-up "></i>
+                    <i class="far fa-thumbs-down"></i>
+                  </div>
+              </div> 
+              <div class="content-modal">
+                   <div class="content-modal-box">
+                        <span><img style="width: 2rem;border-radius: 50%;" src="./image/logo-coffee1.jpg" alt="">Trợ lí ảo Cafe 19:15</span>
+                        <div class="content-modal-item">
+                            <div class="content-box">
+                                <h3 class="message-1">Xin chào anh chị !</h3>
+                                <h3 class="message-2">Em có thể giúp gì cho anh chị ạ <i style="color: red;"class="fas fa-heart"></i>	</h3>      
+                            </div>
+                            <!-- <div class="content-box">
+                                <h3>Chào bạn! Chúc bạn có một ngày mới tràn đầy năng lượng</h3> 
+                            </div>
+                             <div class="content-box">
+                                <h3>Để có thể hỗ trợ tốt nhất cho bạn, 
+                                    bạn có thể cho mình biết tên của bạn chứ, 
+                                    tên bạn là gì ?
+                                </h3>            
+                             </div> -->
+                        </div>
+                        
+                   </div>
+              </div>      
+              <div class="input-modal">
+                  <form action="input-content" class="bgc-form">
+                       <input type="text" placeholder="Viết tin nhắn ...">
+                        <ul class="icon">
+                            <i class="far fa-smile"></i>
+                            <i style="margin-left: .5rem;" class="fas fa-paperclip"></i>
+                            <i class="fas fa-share-square"></i>
+                        </ul>
+                        <!-- <ul class="attachments">
+                           
+                        </ul>
+                        <ul class="send">
+                           
+                        </ul> -->
+                  </form>
+                  <div class="footer-modal">
+                    <p>Powered by <i class="fas fa-comment-alt-check"></i> <b>LiveChat</b></p>
+                </div>
+              </div>
+              
+          </div>
+        </div>
+      </div>
+      
+      
+    
 </body>
 </html>

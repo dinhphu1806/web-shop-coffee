@@ -20,8 +20,8 @@
 }
 html{
     font-size: 62.5%;
-    overflow-x: hidden; /*không hiện thanh cuộn trục x*/
-    scroll-padding-top: 9rem;
+    overflow-x: hidden; không hiện thanh cuộn trục x
+    /* scroll-padding-top: 9rem; */
     scroll-behavior: smooth;
 }
 html::-webkit-scrollbar{
@@ -45,11 +45,11 @@ body{
     align-items: center;
     padding: 1.5rem 7%; /*padding thẻ header top-bottom: 1.5rem ~~ left-right:7%  */
     border-bottom: var(--border); /*tạo gạch dưới trên class header*/
-    position: fixed;/* fixed class header */
+    /* position: fixed;fixed class header
     top: 0;
     left: 0; 
     right: 0;
-    z-index: 1000; 
+    z-index: 1000;  */
     box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
   
 }
@@ -730,15 +730,32 @@ body{
     z-index: 1000;
     
 }
+
 .btn-message{
     font-size: 4rem;
     width: 5rem;
     height: 5rem;
-    background-color:rgb(222, 184, 135);
+    /* background-color:rgb(222, 184, 135); */
     opacity: 1;
     text-align: center;   
     border-radius: 50%;
+    border: 1px solid #ccc;
+    transition: all 0.2s linear;
     color: #fff;
+    animation: myZoom 4s infinite;
+
+}
+
+@keyframes myZoom{
+    from{
+    transform: scale(1);
+    border: none;
+    }
+    to{
+    transform: scale(1.1);
+   
+    background-color:var(--main-color);
+    }
 }
 .message-box .btn-message:hover{
     background-color: #010103;
@@ -748,6 +765,8 @@ body{
     transform: scale(1.2);
     transform-origin: right;
 }
+
+
 .back-to-home{
     position: absolute;
     right: 0;
@@ -755,6 +774,7 @@ body{
     position: fixed;
     z-index: 1000;
 }
+
 .btn-home{
     width: 3rem;
     font-size: 4rem;
@@ -769,27 +789,13 @@ body{
 .blogs .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 0 2rem;  
-    text-align: center;
-    padding: 0 2rem;
-   
-
+    gap: 2rem;  
+    /* text-align: center; */
+    padding: 0 3rem;
+    
 }
 .blogs .box{
     border: 1px solid #ccc;
-}
-.box-container .box .content{
-    display: flex;
-    flex-direction: column;
-}
-.box-container .content .title{
-    font-size: 2rem;
-    color: #fff;
-}
-.box-container .content span{
-    font-size: 1rem;
-    color: var(--main-color);
-    margin-top: 2rem;
 }
 .blogs .box-container .box .image{
     overflow: hidden;
@@ -801,10 +807,298 @@ body{
     height: 100%;
     object-fit: cover;
 }
-.blogs .box-container .box:hover .image img{
+.blogs .box-container .box .image:hover img{
     transform: scale(1.2);
+}
 
+.box-container .box .content{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+.box-container .content .title{
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 1rem;
+}
+.box-container .content .title:hover{
+    text-decoration: underline;
+}
+.box-container .box .content span{
+    font-size: 1.7rem;
+    color: var(--main-color);
+    margin-top: 1rem;
+}
+.box-container .box .content p{
+    color: rgba(204, 204, 204, 0.809);
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.btn-blogs{
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    text-align: center;
+    color: #fff;
+    background-color: #010103;
+    border: 1px solid #ccc;
+}
+.box-container .box .content .btn-blogs:hover{
+    color:#13131a;
+    background-color: var(--main-color);
+   
 }
 
 
+/* -------------CSS section FOOTERS-------------- */
+.footer-column{
+    margin-top: 3rem;
+}
+.footer-list{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 5rem 8rem;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(67, 64, 64, 0.33);}
+.footer-left{
+    width: 40rem;
+   
+}
+.footer-column .footer-list .footer-heading{
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.footer-column .footer-list .footer-left p{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+.footer-links-left{
+    display: flex;
+    color: #fff;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+.footer-links-left a{
+    margin-right: 1rem;
+}
+.footer-column .footer-list .footer-left .footer-links-left .fa-facebook-square:hover{
+    opacity: .7;
+    color: #fff;
+}
+.footer-column .footer-list .footer-left .footer-links-left .fa-twitter-square:hover{
+    opacity: .7;
+    color: #fff; 
+}
+.footer-column .footer-list .footer-left .footer-links-left .fa-instagram-square:hover{
+    opacity: .7;
+    color: #fff; 
+}
+.footer-column .footer-list .footer-left .footer-links-left .fa-youtube:hover{
+    opacity: .7;
+    color: #fff;
+}
+.footer-column .footer-list .footer-left .footer-links-left .fa-linkedin:hover{
+    opacity: .7;
+    color: #fff;
+}    
+.footer-middle .footer-links-middle a{
+    font-size: 1.2rem;
+    color: rgb(230, 221, 221);
+    margin-bottom: 1rem;
+}
+.footer-middle .footer-links-middle a:hover{
+    opacity: .8;
+    text-decoration: underline;
+}
 
+.footer-links-middle{
+    display: flex;
+    flex-direction: column;
+}
+.flex{
+    display: flex;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+.fas{
+    margin-right: 1rem;
+}
+
+/* -------------CSS section DESIGN-AUTHOR-------------- */
+.design-author{
+    width: 100%;
+    height: 5rem ;
+    color: #fff;
+    text-align: center;
+    line-height: 5rem;
+    font-size: 1.3rem;
+}
+
+/*..............CSS MODAL MESSAGE-HELP-----------------*/
+.modal{
+    color:#010103;
+    text-transform:lowercase;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(122, 117, 117, 0.376);
+    opacity: 0;
+    pointer-events: none;
+    /* display: none; */
+    /* .modal.open{
+    display: flex;
+} */
+
+}
+.modal.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+   
+   
+.modal-container{
+    /* position: fixed; */
+    position: fixed;
+    top: 5%;
+    right: 7%;
+    background-color:#ccc;
+    z-index: 1000;
+    min-height: 45rem;
+    width: 30rem;
+    border-radius: .7rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.modal-close{
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    font-size: 2rem;
+    padding: 0 1rem;
+}
+.heading-modal{
+    background-color: #26d290;
+    padding: 1rem;
+    display: flex;
+}
+
+.header-modal{
+    display: flex;
+    justify-content:space-between;
+    padding: 1rem 2rem;
+    background-color: #fff;
+}
+.assistant{
+    display: flex;
+}
+.assistant-content{
+    margin-left: 1rem;
+}
+.assistant-content::after{
+    content: " ";
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #1bd08a;
+    position: absolute;
+    top: 12%;
+    left : 17%;
+}
+.feel i{
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.assistant-content span{
+    font-size: 1.3rem;
+}
+.header-modal .feel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-modal .feel i:hover{
+    color: rgb(0, 8, 255);
+}
+.content-modal-box{
+    padding: 1rem;
+}
+.content-modal-box img{
+    margin-right: .7rem;
+}
+.content-box{
+    display: flex;
+    flex-direction: column;
+}
+.message-1{
+    width: 12rem;
+    height: 3rem;
+    background-color:#fff;
+    text-align: center;
+    line-height: 3rem;
+    text-transform:none;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.message-2{
+    width: 20rem;
+    height: 3rem;
+    background-color:#fff;
+    line-height: 3rem;
+    text-transform:none;
+    border-radius: 1rem;
+    text-align: center;
+}
+.input-modal{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.input-modal form{
+    display: flex;
+}
+.bgc-form{
+    width: 100%;
+    height: 4rem;
+    background-color: #fff;
+}
+.bgc-form ul{
+    line-height: 4rem;
+    font-size: 2rem;
+}
+.bgc-form input{
+    width: 100%;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-modal p{
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+#preloader{
+    background: #000 url(../image/loading3.gif) no-repeat center center;
+    background-size: 25%;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+} 
