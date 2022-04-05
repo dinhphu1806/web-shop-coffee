@@ -36,24 +36,36 @@ html::-webkit-scrollbar-thumb{
     border-radius: 5rem;
 }
 body{
-    background-color: var(--bg); /*cho body nền đen*/
+    background-color:var(--bg); /*cho body nền đen*/
 }
 /* -------------CSS header-------------- */
 .header{ 
-    background: var(--bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 7%; /*padding thẻ header top-bottom: 1.5rem ~~ left-right:7%  */
-    border-bottom: var(--border); /*tạo gạch dưới trên class header*/
+    /* border-bottom: var(--border); tạo gạch dưới trên class header */
     position: fixed;/*fixed class header*/
     top: 0;
     left: 0; 
     right: 0;
-    z-index: 1000; 
-    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+    z-index: 100000; 
+    transition: all 0.2s linear;
 }
-
+header.sticky{
+    padding: .4rem 5%;
+    background-color: #010103;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+    animation: headerzoom 1s;
+}
+@keyframes headerzoom {
+    from{
+        transform: translateY(-400px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
                             /*css logo*/
 .header .logo img{
     height: 6rem; /*img heigt 6rem*/
@@ -64,12 +76,31 @@ body{
     font-size: 1.5rem;
     color: #fff;
     text-transform: uppercase;
+    position: relative;
 } 
-.header .navbar a:hover{ /*khi hover các thẻ a hiện thanh gạch dưới bottom*/
+/* .header .navbar a:hover{ khi hover các thẻ a hiện thanh gạch dưới bottom
     color: var(--main-color);
     border-bottom: .1rem solid var(--main-color);
-    padding-bottom: .1rem;
+    padding-bottom: .1rem; 
+} */
+.header .navbar a::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: .1rem;
+    background-color: var(--main-color);
+    transition: all 0.2s linear;
 }
+.header .navbar a:hover::after{
+    width: 100%;
+ 
+}
+.header .navbar .under:hover::after{
+    width: 0%;
+}
+
 .header .navbar a.under{
     color: var(--main-color);
     border-bottom: .1rem solid var(--main-color);
@@ -625,6 +656,7 @@ body{
     align-items: center;
     justify-content: center;
     position: relative;
+    flex-wrap: wrap;
 }
 .image-item .content-fadein{
     display: none;
@@ -736,7 +768,7 @@ body{
     display: flex;
     flex-direction: column;
     position: fixed;
-    z-index: 1000;
+    z-index: 10000;
     
 }
 
@@ -751,7 +783,7 @@ body{
     border: 1px solid #ccc;
     transition: all 0.2s linear;
     color: #fff;
-    animation: myZoom 4s infinite;
+    animation: myZoom 3s infinite;
 
 }
 
@@ -761,7 +793,7 @@ body{
     border: none;
     }
     to{
-    transform: scale(1.1);
+    transform: scale(1.2);
    
     background-color:var(--main-color);
     }
@@ -967,11 +999,11 @@ body{
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1000;
+    z-index: 100000;
     background-color: rgba(122, 117, 117, 0.376);
-    opacity: 0;
+    /* opacity: 0; */
     pointer-events: none;
-    /* display: none; */
+    display: none;
     /* .modal.open{
     display: flex;
 } */
@@ -989,7 +1021,7 @@ body{
     top: 5%;
     right: 7%;
     background-color:#ccc;
-    z-index: 1000;
+    z-index: 10000;
     min-height: 45rem;
     width: 30rem;
     border-radius: .7rem;
@@ -997,7 +1029,7 @@ body{
 }
 .modal-close{
     position: absolute;
-    top: 2%;
+    top: 0;
     right: 4%;
     font-size: 2rem;
     padding: 0 1rem;

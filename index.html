@@ -34,7 +34,8 @@
             <img src="./image//logo-coffee1.jpg" alt="">
         </a>
 
-        <nav class="navbar">
+        <nav class="navbar" id="nav">
+           <ul id="menu">
             <a class="under" href="#">home</a>
             <a href="#about">about</a>
             <a href="#menu">menu</a>
@@ -42,6 +43,7 @@
             <a href="#review">review</a>
             <a href="#contact">contact</a>
             <a href="#blogs">blogs</a>
+           </ul>
         </nav>
 
         <div class="icons">
@@ -485,7 +487,7 @@
       <!--fixed message starts-->
       <section class="message">
         <div class="message-box">
-            <a class="btn-message" id="js-btn"><i class="fab fa-facebook-messenger"></i></a>
+            <a class="btn-message js-btn-message"><i class="fab fa-facebook-messenger"></i></a>
         </div>
         <div id="back-to-home">
             <a class="btn-home" href="#home"><i class="fas fa-caret-square-up"></i></a>
@@ -618,6 +620,7 @@
 
     <script src="./js/slick-slider.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/sticky.js"></script>
     <script src="./js/loader.js"></script>
     <script>
         AOS.init();
@@ -625,9 +628,9 @@
 
 
       <!--modal message-help-->
-      <div class="modal" id="js-modal">
-        <div class="modal-container" id="js-modal-container">
-          <div class="modal-close js-modal-close">X</div>
+      <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+          <div claass="modal-close js-modal-close">X</div>
           <div class="modal-content">
               <div class="heading-modal">
                 <h2>Tư vấn CaFe</h2>
