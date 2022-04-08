@@ -329,7 +329,21 @@ header.sticky{
         width: 100%;
         background-color: rgba(67, 64, 64, 0.33);
     } */
-
+    /* css grid slider */
+    .image-box{
+        grid-template-columns: unset; 
+        grid-auto-flow: column;
+        grid-auto-columns: 80%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+        padding: 10px;/*tu box-shadow*/
+        scroll-padding: 25px;
+        margin-left: -25px;/*truwf leef khi padding*/
+    }
+    .image{
+         scroll-snap-align: center; /*start/center/end */
+    }
 }
 
 @media (max-width: 450px){
