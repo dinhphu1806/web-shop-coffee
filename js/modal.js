@@ -31,9 +31,9 @@
 //  close.addEventListener('click', () => {
 //     jsModal.classList.remove('show');
 //  })
-const btns = document.querySelectorAll('.js-btn-message')
-const modal = document.querySelector('.js-modal')
-const modalClose = document.querySelector('.js-modal-close')
+const btns = document.querySelectorAll('#js-btn-message');
+const modal = document.querySelector('.js-modal');
+const modalClose = document.querySelector('.js-modal-close');
 const modalContainer = document.querySelector('.js-modal-container');
 
 function showMessage(){

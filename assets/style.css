@@ -49,7 +49,7 @@ body{
     top: 0;
     left: 0; 
     right: 0;
-    z-index: 100000; 
+    z-index: 1000; 
     transition: all 0.2s linear;
 }
 header.sticky{
@@ -344,6 +344,17 @@ header.sticky{
     .image{
          scroll-snap-align: center; /*start/center/end */
     }
+    /* .swiper-pagination{
+        display: none;
+    } */
+    .swiper-scrollbar{
+        display: block;
+    }
+    .swiper-scrollbar-drag{
+        background-color: rgba(224, 212, 212, 0.963) !important;
+    }
+    
+    
 }
 
 @media (max-width: 450px){
@@ -356,6 +367,8 @@ header.sticky{
     .message{
         display: none;
     }
+ 
+    
 }
 /* -------------CSS section HOME-------------- */
 .home{
@@ -386,7 +399,43 @@ header.sticky{
     padding: 1rem 0;
     color: rgba(238, 238, 238, 0.809);
 }
-    
+/* -------------CSS section SLIDE- Lib - SWIPER-------------- */
+.swiper{
+    margin-top: 2rem;
+    max-width: 80%;
+    /* width: 90%; */
+    height:100%;
+    position: relative;
+}
+.swiper-slide{
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    background-color: #000;
+}
+.swiper .swiper-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.swiper-scrollbar{
+    display: none;
+}
+
 /* -------------CSS section ABOUT-------------- */
 .heading{
     text-align: center;
@@ -1014,16 +1063,16 @@ header.sticky{
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 100000;
-    background-color: rgba(122, 117, 117, 0.376);
-    /* opacity: 0; */
-    pointer-events: none;
+    z-index: 10000;
+    background-color: rgba(99, 94, 94, 0.202);
+   
+    /* pointer-events: none; */
     display: none;
-    /* .modal.open{
-    display: flex;
-} */
-
+   
 }
+.modal.open{
+    display: flex;
+} 
 .modal.show {
     pointer-events: auto;
     opacity: 1;
@@ -1031,12 +1080,10 @@ header.sticky{
    
    
 .modal-container{
-    /* position: fixed; */
     position: fixed;
     top: 5%;
     right: 7%;
     background-color:#ccc;
-    z-index: 10000;
     min-height: 45rem;
     width: 30rem;
     border-radius: .7rem;
@@ -1045,9 +1092,9 @@ header.sticky{
 .modal-close{
     position: absolute;
     top: 0;
-    right: 4%;
+    right: 0;
     font-size: 2rem;
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
 }
 .heading-modal{
     background-color: #26d290;
@@ -1075,7 +1122,7 @@ header.sticky{
     border: 2px solid #fff;
     background-color: #1bd08a;
     position: absolute;
-    top: 12%;
+    top: 13%;
     left : 17%;
 }
 .feel i{
@@ -1154,6 +1201,9 @@ header.sticky{
     padding: 1rem 2rem;
     text-align: center;
 }
+
+.input-modal input[type="text"]{
+   padding: 0 2rem;
 
 /* #preloader{
     background: #000 url(../image/loading3.gif) no-repeat center center;
