@@ -16,12 +16,12 @@
     border: none;
     text-decoration: none;
     text-transform: capitalize;
-    transition: all 0.2s linear;
+    transition: all 0.5s linear;
 }
 
 html{
     font-size: 62.5%;
-    overflow-x: hidden;/* không hiện thanh cuộn trục x */
+    overflow-x: hidden;/*không hiện thanh cuộn trục x*/
     /* scroll-padding-top: 9rem; */
     scroll-behavior: smooth;
 }
@@ -83,23 +83,36 @@ header.sticky{
     border-bottom: .1rem solid var(--main-color);
     padding-bottom: .1rem; 
 } */
+.header .navbar a::before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: all 0.2s linear;
+}
 .header .navbar a::after{
     content: '';
     position: absolute;
     bottom: -2px;
     left: 0;
     width: 0;
-    height: .1rem;
+    height: 2px;
     background-color: var(--main-color);
     transition: all 0.2s linear;
 }
-.header .navbar a:hover::after{
-    width: 100%;
+.header .navbar a:hover::before, .header .navbar a:hover::after{
+    width: 50%;
  
 }
-.header .navbar .under:hover::after{
-    width: 0%;
+.header .navbar .under:hover::before{
+    width: 100%;
 }
+
+
+
 
 .header .navbar a.under{
     color: var(--main-color);
@@ -247,6 +260,10 @@ header.sticky{
     .contact{
         overflow: hidden;
     }
+    .header .navbar a:hover::before, .header .navbar a:hover::after{
+        width: 0%;
+     
+    }
 }
     /*responesive mobile*/
 @media (max-width: 768px){
@@ -256,19 +273,21 @@ header.sticky{
     .header .navbar{
         position: absolute;
         top: 100%;
-        right: -100%; /*ẩn thẻ sang phai -100%*/
-        background-color:#13131ab8;
-        width: 50%; /*width cho thẻ khi responsive */
+        left: 0; right: 0;
+        /* right: -100%;ẩn thẻ sang phai -100% */
+        background-color:#13131ad7;
+        width: 100%; /*width cho thẻ khi responsive */
         /* height: calc(100vh - 9.5rem); */
-        height: 100vh;
+        min-height: 35vh;
         text-align: center;
         transition: all 0.2s linear;
         text-transform: capitalize;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
     .header .navbar a{
         display: block; /*cho thẻ nằm đứng khi đã position: absolute*/
         margin: 1.5rem;
-        padding: .5rem;
+        padding: .5rem 0;
         font-size: 2rem;
         color: rgb(238, 231, 231);
         /* color: var(--black); */
@@ -286,7 +305,9 @@ header.sticky{
     }
      /* active từ js */
     .header .navbar.active{ /*từ js*/
-        right: 0;
+        /* right: 0; */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+       
     }
     .header .cart-items-container.active{ /*từ js*/
         right: 0;
@@ -353,6 +374,10 @@ header.sticky{
     .swiper-scrollbar-drag{
         background-color: rgba(224, 212, 212, 0.963) !important;
     }
+    #preloader::after,
+    #preloader::before {
+        border: 15px solid transparent;
+    }
     
     
 }
@@ -366,6 +391,10 @@ header.sticky{
     }
     .message{
         display: none;
+    }
+    #preloader::after,
+    #preloader::before {
+        border: 10px solid transparent;
     }
  
     
@@ -743,83 +772,7 @@ header.sticky{
 .slick-initialized .slick-slide{
     margin: 0px 10px; 
 }
-/*từ js class = slick-arrow qua css cho arrow*/
-/* .slick-arrow{ */
-    /*viết nhanh abscentery*/
-    /* position: absolute;
-    top: 45%;
-    transform: translateY(-50%); */
-    /* border: none; do là button */
-    /* width: 50px;
-    height: 40px; */
-    /*viết nhanh flex: center*/
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    line-height: 1;
-    z-index: 2;
-    transition: all 0.2s linear;/*viết nhanh tsall*/
-/* }  */
-/* .slick-arrow:hover{
-    background-color: #2cccff;
-    color: white;
-} */
-/*css arrow-prev*/
-/* .slick-prev{ */
-    /*viết nhanh abscenterY + enter*/
-    /*căn giữa theo chiều dọc*/
-    /*position: absolute; /*chung trên nên bỏ đi*/
-    /*top: 45%; /*chung trên nên bỏ đi*/
-    /* left: 0; */
-    /*transform: translateY(-50%); /*căn giữa theo chiều dọc Y*/
-    /* background-color: #2cccff; */
-    /* color: white; */
-    /* border: none; */
-    /*z-index: 2; /*cho button prev năm lên trên*/
-    /* padding: 10px 10px; */
-/* } */
-/*css arrow-next*/
-/* .slick-next{ */
-    /*viết nhanh abscenterY + enter*/
-    /*căn giwuax theo chiều dọc*/
-     /*position: absolute; /*chung trên nên bỏ đi*/
-      /*top: 45%; /*chung trên nên bỏ đi*/
-    /* right: 0; */
-    /*transform: translateY(-50%); /*căn giữa theo chiều dọc Y*/
-    /* background-color: #2cccff; */
-    /* color: white; */
-    /* border: none; */
-    /*z-index: 2; /*cho button prev năm lên trên*/
-    /* padding: 10px 10px;*/
-/* }  */
-/* css class click-dots từ js, F12 tìm class nó */
-/* .slick-dots{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    list-style: none;
-    display: flex !important; /*nằm ngang*/
-    /* align-items: center;
-    justify-content: center;
-    gap: 0 20px;
-}  */
-/*css button*/
-/* .slick-dots button{
-    font-size: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 100rem;
-    border-color: rgba(51, 49, 49, 0.205);
-    border: none;
-    outline: none;
-    transition: all 0.2s linear;
-} */
-/*F12 tìm bấm vào button tìm click-active nằm trong class slick-dots */
-/* .slick-dots .slick-active button{
-    background-color: #2cccff;
-} */
+
 
 .message{
     position: relative;
@@ -837,18 +790,20 @@ header.sticky{
     
 }
 
-.btn-message{
+.fa-facebook-messenger{
     font-size: 4rem;
-    width: 5rem;
-    height: 5rem;
-    /* background-color:rgb(222, 184, 135); */
+    /* width: 5rem;
+    height: 5rem; */
+    background-color:rgb(222, 184, 135);
     opacity: 1;
     text-align: center;   
     border-radius: 50%;
     border: 1px solid #ccc;
     transition: all 0.2s linear;
     color: #fff;
-    animation: myZoom 3s infinite;
+    cursor: pointer;
+    /* animation: myZoom 3s infinite; */
+  
 
 }
 
@@ -873,21 +828,32 @@ header.sticky{
 }
 
 
-#back-to-home{
-    position: absolute;
-    right: 0;
-    bottom: 30%;
-    position: fixed;
-    
-}
 
 .btn-home{
+    position: fixed;
+    bottom: 20rem;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 3rem;
     font-size: 4rem;
     color: rgb(61, 53, 53);
     z-index: 1000;
+    opacity: 0;
+    /* visibility: hidden; */
+    pointer-events: none;
+    transition: all 0.5s;
+    cursor: pointer;
 }
-#back-to-home .btn-home:hover{
+.btn-home.show{
+    opacity: 1;
+    pointer-events: auto;
+    /* visibility: visible; */
+   
+   
+}
+.btn-home:hover{
     color: #ccc;
 }
 
@@ -1073,11 +1039,11 @@ header.sticky{
 }
 .modal.open{
     display: flex;
-} 
-.modal.show {
+}
+/* .modal.show {
     pointer-events: auto;
     opacity: 1;
-}
+} */
    
    
 .modal-container{
@@ -1214,3 +1180,64 @@ header.sticky{
     height: 100vh;
     z-index: 1000;
 }  */
+}
+/* CSS-PRELOADER */
+#preloader {
+    /* background-color: #2c3e50; */
+    background-color: #000;
+    position: fixed;
+    /* height: 80px;
+    width: 80px; */
+    width: 100%;
+    height: 100vh;
+    z-index: 100000;
+    
+  }
+  #preloader::after,
+  #preloader::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: #fff;
+  animation: rotateA 2s linear infinite 0.5s;
+}
+#preloader::before {
+    transform: rotate(90deg);
+    animation: rotateB 2s linear infinite;
+  }
+  @keyframes rotateA {
+    0%,
+    25% {
+      transform: rotate(0deg);
+    }
+  
+    50%,
+    75% {
+      transform: rotate(180deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotateB {
+    0%,
+    25% {
+      transform: rotate(90deg);
+    }
+  
+    50%,
+    75% {
+      transform: rotate(270deg);
+    }
+  
+    100% {
+      transform: rotate(450deg);
+    }
+  }
+  

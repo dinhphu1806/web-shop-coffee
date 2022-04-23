@@ -31,26 +31,26 @@
 //  close.addEventListener('click', () => {
 //     jsModal.classList.remove('show');
 //  })
-const btns = document.querySelectorAll('#js-btn-message');
-const modal = document.querySelector('.js-modal');
-const modalClose = document.querySelector('.js-modal-close');
+const btns = document.querySelectorAll('.js-btn-message')
+const modal = document.querySelector('.js-modal')
 const modalContainer = document.querySelector('.js-modal-container');
+const modalClose = document.querySelector('.js-modal-close')
 
-function showMessage(){
-    modal.classList.add('open');
-}
-function hideMessage(){
-    modal.classList.remove('open');
-}
+    function showBook(){
+        modal.classList.add('open')
+    }
 
-for(const btn of btns){
-    btn.addEventListener('click', showMessage)
-}
+    function hideBook(){
+        modal.classList.remove('open')
+    }
 
-modalClose.addEventListener('click', hideMessage)
+    for(const btn of btns){
+        btn.addEventListener('click', showBook)
+    }
+    modalClose.addEventListener('click', hideBook)
 
-modal.addEventListener('click', hideMessage)
+    modal.addEventListener('click', hideBook)
 
-modalContainer.addEventListener('click', function(event){
-    event.stopPropagation()
-})
+    modalContainer.addEventListener('click', function(event){
+        event.stopPropagation()
+    })
