@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="./assets/style.css">
     <!--link font awesome cdn:  cdnjs.com-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link href="./aos-master/dist/aos.css" rel="stylesheet">
-    <script src="./aos-master/dist/aos.js"></script>
+    <!-- aos-js -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script
         src="https://code.jquery.com/jquery-3.6.0.js">
     </script>
     <!-- lib-swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-     <!-- -- -->
+   
     <link
         rel="stylesheet"
         type="text/css"
@@ -36,7 +37,6 @@
         <a class="logo" href="#">
             <img src="./image//logo-coffee1.jpg" alt="">
         </a>
-
         <nav class="navbar" id="nav">
            <ul id="menu">
             <a class="under" href="#">home</a>
@@ -104,7 +104,7 @@
     
     <!--home section starts -->
     <section class="home" id="home">
-        <div data-aos="fade-down-right" class="content">
+        <div data-aos="fade-down-right"   class="content">
             <h3>fresh coffee in the morning</h3>
             <p>Lorem ipsum, dolor sit amet con sectetur adipisicing elit. Placeat labore, sint
                 cupiditate distinctio tempora reiciendis
@@ -276,7 +276,7 @@
   
     <!--about section start-->
     <section class="about" id="about">
-        <h1 data-aos="fade-left" data-aos-duration="2000" class="heading">
+        <h1 data-aos="fade-left"  class="heading">
             <span>about</span> us
         </h1>
         <div class="row">
@@ -302,13 +302,13 @@
 
       <!--menu section starts-->
     <section class="menu" id="menu">
-            <h1 data-aos="zoom-out-left" class="heading">our <span>menu</span></h1>
+            <h1 data-aos="zoom-out-left"   class="heading">our <span>menu</span></h1>
             <div class="box-container">
                 <!--box 1-->
                 <div class="box">
                     <img data-aos="fade-right" src="./image/menu-1.png" alt="">
-                    <h3 data-aos="fade-right">tasty and healty</h3>
-                    <div data-aos="fade-right" class="price">
+                    <h3 data-aos="fade-right"  >tasty and healty</h3>
+                    <div data-aos="fade-right"  class="price">
                         $15.99 <span>20.99</span>
                     </div>
                     <a data-aos="fade-right" href="#" class="btn">add to cart</a>
@@ -316,9 +316,9 @@
 
                 <!--box 2-->
                 <div class="box">
-                    <img  data-aos="fade-down-left" src="./image/menu-2.png" alt="">
-                    <h3  data-aos="fade-down-left">tasty and healty</h3>
-                    <div data-aos="fade-down-left"class="price">
+                    <img  data-aos="fade-down-left"  src="./image/menu-2.png" alt="">
+                    <h3  data-aos="fade-down-left" >tasty and healty</h3>
+                    <div data-aos="fade-down-left" class="price">
                         $15.99 <span>20.99</span>
                     </div>
                     <a  data-aos="fade-down-left" href="#" class="btn">add to cart</a>
@@ -336,9 +336,9 @@
 
                 <!--box 4-->
                 <div class="box">
-                    <img data-aos="fade-right" src="./image/menu-4.png" alt="">
-                    <h3 data-aos="fade-right">tasty and healty</h3>
-                    <div data-aos="fade-right" class="price">
+                    <img data-aos="fade-right"  src="./image/menu-4.png" alt="">
+                    <h3 data-aos="fade-right" >tasty and healty</h3>
+                    <div data-aos="fade-right"   class="price">
                         $15.99 <span>20.99</span>
                     </div>
                     <a data-aos="fade-right" href="#" class="btn">add to cart</a>
@@ -346,9 +346,9 @@
 
                 <!--box 5-->
                 <div class="box">
-                    <img data-aos="fade-down-left" src="./image/menu-5.png" alt="">
-                    <h3 data-aos="fade-down-left">tasty and healty</h3>
-                    <div data-aos="fade-down-left" class="price">
+                    <img data-aos="fade-down-left"   src="./image/menu-5.png" alt="">
+                    <h3 data-aos="fade-down-left"  >tasty and healty</h3>
+                    <div data-aos="fade-down-left"   class="price">
                         $15.99 <span>20.99</span>
                     </div>
                     <a data-aos="fade-down-left" href="#" class="btn">add to cart</a>
@@ -356,12 +356,12 @@
 
                 <!--box 6-->
                 <div class="box">
-                    <img data-aos="fade-left" src="./image/menu-6.png" alt="">
-                    <h3 data-aos="fade-left">tasty and healty</h3>
+                    <img data-aos="fade-left"  src="./image/menu-6.png" alt="">
+                    <h3 data-aos="fade-left" >tasty and healty</h3>
                     <div data-aos="fade-left" class="price">
                         $15.99 <span>20.99</span>
                     </div>
-                    <a data-aos="fade-left" href="#" class="btn">add to cart</a>
+                    <a data-aos="fade-left"  href="#" class="btn">add to cart</a>
                 </div>
             </div>
     </section>
@@ -380,19 +380,20 @@
                 </div>
                 <div data-aos="fade-right"
                 data-aos-offset="300"
-                data-aos-easing="ease-in-sine" class="image">
+                data-aos-easing="ease-in-sine" 
+                 class="image">
                     <img src="./image/product-1.png" alt="">
                 </div>
                 <div class="content">
-                    <h3 data-aos="zoom-out-right">fresh coffee</h3>
-                    <div data-aos="zoom-out-right"class="stars">
+                    <h3 data-aos="zoom-out-right"  >fresh coffee</h3>
+                    <div data-aos="zoom-out-right"   class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <div data-aos="zoom-out-right"class="price">$15.99 <span>$20.99</span></div>
+                    <div data-aos="zoom-out-right"  class="price">$15.99 <span>$20.99</span></div>
                 </div>
             </div>
 
@@ -405,19 +406,20 @@
                 </div>
                 <div data-aos="fade-down"
                 data-aos-offset="300"
-                data-aos-easing="ease-in-sine" class="image">
+                data-aos-easing="ease-in-sine" 
+                 class="image">
                     <img src="./image/product-2.png" alt="">
                 </div>
                 <div class="content">
-                    <h3 data-aos="zoom-out-down">fresh coffee</h3>
-                    <div data-aos="zoom-out-down" class="stars">
+                    <h3 data-aos="zoom-out-down"   >fresh coffee</h3>
+                    <div data-aos="zoom-out-down"   class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <div data-aos="zoom-out-down" class="price">$15.99 <span>$20.99</span></div>
+                    <div data-aos="zoom-out-down"  class="price">$15.99 <span>$20.99</span></div>
                 </div>
             </div>
 
@@ -430,19 +432,19 @@
                 </div>
                 <div data-aos="fade-left"
                 data-aos-offset="300"
-                data-aos-easing="ease-in-sine" class="image">
+                data-aos-easing="ease-in-sine"   class="image">
                     <img src="./image/product-3.png" alt="">
                 </div>
                 <div class="content">
-                    <h3 data-aos="zoom-out-left">fresh coffee</h3>
-                    <div data-aos="zoom-out-left" class="stars">
+                    <h3 data-aos="zoom-out-left"   >fresh coffee</h3>
+                    <div data-aos="zoom-out-left"   class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <div data-aos="zoom-out-left" class="price">$15.99 <span>$20.99</span></div>
+                    <div data-aos="zoom-out-left"   class="price">$15.99 <span>$20.99</span></div>
                 </div>
             </div>
 
@@ -453,18 +455,18 @@
 
       <!--review section starts-->
     <section class="review" id="review">
-          <div data-aos="fade-right" data-aos-duration="2000"  class="heading">custom's <span>review</span></div>
+          <div data-aos="fade-right"   class="heading">custom's <span>review</span></div>
 
           <div class="box-container">
              <!--review 1-->
             <div class="box">
-                <img data-aos="fade-up-right" src="./image/quote-img.png" alt="" class="quote">
-                <p data-aos="fade-up-right">Lorem ipsum dolor sit amet con sectetur adipisicing elit. Placeat labore, sint
+                <img data-aos="fade-up-right"   src="./image/quote-img.png" alt="" class="quote">
+                <p data-aos="fade-up-right"  >Lorem ipsum dolor sit amet con sectetur adipisicing elit. Placeat labore, sint
                     cupiditate distinctio tempora reiciendis
                 </p>
                 <img data-aos="fade-down-right" data-aos="fade-down" src="./image/review-1.png" alt="" class="user">
-                <h3 data-aos="fade-down-right">john deo</h3>
-                <div data-aos="fade-down-right" class="stars">
+                <h3 data-aos="fade-down-right" >john deo</h3>
+                <div data-aos="fade-down-right"  class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -474,13 +476,13 @@
             </div>
              <!--review 2-->
              <div class="box">
-                <img data-aos="zoom-in" src="./image/quote-img.png" alt="" class="quote">
-                <p data-aos="zoom-in">Lorem ipsum dolor sit amet con sectetur adipisicing elit. Placeat labore, sint
+                <img data-aos="zoom-in"  src="./image/quote-img.png" alt="" class="quote">
+                <p data-aos="zoom-in"  >Lorem ipsum dolor sit amet con sectetur adipisicing elit. Placeat labore, sint
                     cupiditate distinctio tempora reiciendis
                 </p>
-                <img data-aos="fade-down" src="./image/review-2.png" alt="" class="user">
-                <h3 data-aos="fade-down-left">john deo</h3>
-                <div data-aos="fade-down-left" class="stars">
+                <img data-aos="fade-down"  src="./image/review-2.png" alt="" class="user">
+                <h3 data-aos="fade-down-left" >john deo</h3>
+                <div data-aos="fade-down-left"  class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -490,12 +492,12 @@
             </div>
              <!--review 3-->
              <div class="box">
-                <img data-aos="fade-up-left" src="./image/quote-img.png" alt="" class="quote">
-                <p data-aos="fade-up-left">Lorem ipsum dolor sit amet con sectetur adipisicing elit. Placeat labore, sint
+                <img data-aos="fade-up-left"  src="./image/quote-img.png" alt="" class="quote">
+                <p data-aos="fade-up-left" >Lorem ipsum dolor sit amet con sectetur adipisicing elit. Placeat labore, sint
                     cupiditate distinctio tempora reiciendis
                 </p>
-                <img data-aos="fade-up-left" data-aos="fade-down" src="./image/review-3.png" alt="" class="user">
-                <h3 data-aos="fade-up-left">john deo</h3>
+                <img data-aos="fade-up-left" data-aos="fade-down"  src="./image/review-3.png" alt="" class="user">
+                <h3 data-aos="fade-up-left" >john deo</h3>
                 <div data-aos="fade-up-left" class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -508,7 +510,7 @@
 
       <!--contact section starts-->
     <section class="contact" id="contact">
-          <h1 data-aos="zoom-out-left" data-aos-duration="2000"  class="heading"><span>contact</span> us</h1>
+          <h1 data-aos="zoom-out-left"  class="heading"><span>contact</span> us</h1>
           <div class="row">
 
             <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.164668059681!2d105.77468951440802!3d21.066084391880096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134552bfa617841%3A0x4da7330a40df367f!2zNDIgTmfDtSA1MjEsIEPhu5UgTmh14bq_LCBU4burIExpw6ptLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1648321158073!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -671,16 +673,24 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
 
+    <!-- src aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        }) ;
+        
+      </script>
+
+
     <script src="./js/slick-slider.js"></script>
     <script src="./js/modal.js"></script>
-    <script src="./js/backToHome.js"></script>
+    <script src="./js/backToTop.js"></script>
     <script src="./js/sticky.js"></script>
     <script src="./js/loader.js"></script>
     <script src="./js/swiper-slide.js"></script>
-    <script>
-        AOS.init();
-      </script>
-
+   
 
       <!--modal message-help-->
       <div class="modal js-modal">
